@@ -645,6 +645,48 @@ Now Copy of that **DNS name (URL)** of the ALB Paste the URL inro Your web brows
 <img width="1647" height="946" alt="Image" src="https://github.com/user-attachments/assets/fdb43419-830b-470d-bdb0-aa496bc93913" />
 
 🎉 The application load successfully Through ALB DNS URL 🎉.
+
 ---
 
-## 🏁 Project Completion
+## 🧹 Cleanup (Delete All AWS Resources)
+
+To avoid unnecessary AWS charges, delete all resources created in this project.
+
+### Cleanup Order
+
+1. **ECS Service**
+   - Go to ECS → Cluster → Services
+   - Delete the service (wait until tasks stop)
+
+2. **ECS Cluster**
+   - Delete the ECS cluster
+
+3. **Application Load Balancer**
+   - Go to EC2 → Load Balancers
+   - Delete the ALB
+
+4. **Target Group**
+   - Go to EC2 → Target Groups
+   - Delete the target group
+
+5. **ECR Repository**
+   - Go to Amazon ECR
+   - Delete the repository (delete images first if required)
+
+6. **EC2 Instance**
+   - Terminate the EC2 instance
+
+7. **IAM Role**
+   - Detach policies
+   - Delete the IAM role created for ECR access
+
+---
+
+## ✅ Cleanup Complete
+
+All AWS resources used in this project are deleted, ensuring **no ongoing costs**.
+
+---
+
+## 🏁 Project Completed 😊
+
