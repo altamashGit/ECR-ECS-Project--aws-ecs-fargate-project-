@@ -29,7 +29,7 @@ It also strengthened my understanding of cloud networking, security, and scalabl
 
 ## 📐 Architecture Diagram
 
-<Image1>
+<img width="1592" height="774" alt="Image" src="https://github.com/user-attachments/assets/6face42a-595c-4b37-b135-c73b332d359c" />
 
 
 ---
@@ -53,8 +53,9 @@ It also strengthened my understanding of cloud networking, security, and scalabl
 - Launch an **Amazon Linux** EC2 instance
 - Allow **HTTP (80)** and **SSH (22)** in the security group
 
-<Ec2-launch config image>
-<ec2 after launch>
+<<img width="559" height="563" alt="Image" src="https://github.com/user-attachments/assets/98a85234-1016-40a7-9499-5fb033b372c1" />
+---
+<img width="1547" height="616" alt="Image" src="https://github.com/user-attachments/assets/25b30e9d-ac30-4601-8748-063c65169be0" />
 
 ---
 
@@ -71,8 +72,7 @@ ssh -i key.pem ec2-user@<EC2_PUBLIC_IP>
 ```bash
 sudo yum install git docker -y
 ```
-
-<git install iamge>
+<img width="1088" height="551" alt="Image" src="https://github.com/user-attachments/assets/1d674235-a790-45f2-ba97-059432b06748" />
 
 ### 4️⃣ Enable and Start Docker
 
@@ -89,7 +89,7 @@ sudo systemctl enable docker
 ```bash
 sudo usermod -aG docker ec2-user
 ```
-<Docker setup image>
+<img width="925" height="359" alt="Image" src="https://github.com/user-attachments/assets/5c17976c-c37b-4ead-83f2-b93f828f4427" />
 
 ⚠️ Logout and login again for group changes to take effect.
 
@@ -126,7 +126,7 @@ http://<EC2_PUBLIC_IP>:80
 
 ```
 
-<Image web browser>
+<img width="1785" height="818" alt="Image" src="https://github.com/user-attachments/assets/501d97ff-585e-4d07-9382-15a434e6c61d" />
 
 ✅ Outcome
 
@@ -185,7 +185,7 @@ An IAM Role attached to EC2 allows the instance to push Docker images to **Amazo
 
 ## 🏗️ Architecture Flow
  
- <Image architecture of role>
+<img width="959" height="673" alt="Image" src="https://github.com/user-attachments/assets/ba7cc069-1556-4c81-afde-c4e797a01d81" />
 
 ---
 
@@ -224,8 +224,7 @@ After creating the IAM role, the next step is to **attach the role to the runnin
 8. Click on **Update IAM Role**
 
 ---
-
-<Modify role image>
+<img width="1821" height="506" alt="Image" src="https://github.com/user-attachments/assets/866f2615-412c-4cf9-8bdd-3aa15275f992" />
 
 ---
 
@@ -259,7 +258,7 @@ Now that the **IAM role is attached**, the EC2 instance has permission to push i
 
 AWS provides **four commands** that need to be executed one by one.
 
-<ECr push command image>
+<img width="1738" height="813" alt="Image" src="https://github.com/user-attachments/assets/d9aa07a9-b527-461b-86b8-f79f080fd24b" />
 
 ---
 
@@ -291,9 +290,7 @@ docker tag website:latest \
 ```bash
 docker push \
 335357805095.dkr.ecr.ap-south-1.amazonaws.com/<repository-name>:latest
-
 ```
-<Image>
 
 ---
 
@@ -305,11 +302,9 @@ Open your repository
 
 Confirm that the Docker image is listed successfull
 
-<Image>
-
-
 ---
 
+<img width="1869" height="684" alt="Image" src="https://github.com/user-attachments/assets/ac8f3de8-923d-4081-9b62-26e339650dc5" />
 
 ---
 ## 3. ECS Setup
@@ -336,7 +331,7 @@ In simple terms:
 
 ⏳ It takes a couple of minutes for the ECS cluster to be created.
 
-<Image of created ECS-cluster>
+<img width="1706" height="917" alt="Image" src="https://github.com/user-attachments/assets/8f5406a1-7526-4050-97db-b79c08d7c3a2" />
 
 ---
 
@@ -394,7 +389,7 @@ A **Task Definition** is a blueprint that tells ECS:
      - rest leave default
      - click on create
 
-<Image task defination>
+<img width="1677" height="798" alt="Image" src="https://github.com/user-attachments/assets/45d3c7de-0bb8-462f-8ade-47217d49e397" />
 ---
 
 ## ✅ Result
@@ -421,7 +416,7 @@ A **Task Definition** is a blueprint that tells ECS:
    - Leave all other options as **default**
 5. Click **Create**
 
-<Image of ECS task defination>
+<img width="1884" height="701" alt="Image" src="https://github.com/user-attachments/assets/84720b3d-c2f2-4a5a-b3e5-1329109f5b8e" />
 
 ---
 
@@ -436,13 +431,13 @@ After the task starts running:
 4. Paste the IP in a web browser
 
 
- <Task defination image>
+<img width="1682" height="790" alt="Image" src="https://github.com/user-attachments/assets/e7ec54d8-8f4e-46d8-871f-68841b750608" />
 
 
 ❌ **Result:**  
 You will see a **timeout error**.
 
-<image of time out error>
+<img width="1562" height="831" alt="Image" src="https://github.com/user-attachments/assets/b39a0199-46d9-4523-aed7-8fc622373c0b" />
 
 ---
 
@@ -468,8 +463,8 @@ The timeout happens because:
    - **Port:** 80
    - **Source:** Anywhere (0.0.0.0/0)
 6. Click **Save rules**
-
-<Task security group image>
+7. 
+<img width="1887" height="544" alt="Image" src="https://github.com/user-attachments/assets/76fcf454-cc34-4aa2-8471-1cf026c041bf" />
 
 ---
 
@@ -480,7 +475,7 @@ The timeout happens because:
 
 🎉 The application should now load successfully.
 
-<Image of success>
+<img width="1850" height="971" alt="Image" src="https://github.com/user-attachments/assets/daf74b2a-be71-45c5-8f2a-29d8c02ebea0" />
 
 ---
 ## 🔄 Create ECS Service
@@ -560,9 +555,8 @@ Before creating the load balancer, we need a **Target Group** where ECS tasks wi
 - **Listener:** HTTP (Port 80)
 - **Default action:** Forward to existing target group
 - **Target group:** `website-tg`
-
-<ALB Image>
-
+ 
+<img width="1845" height="797" alt="Image" src="https://github.com/user-attachments/assets/b0c1167d-63d9-43ed-ab75-74711b6db795" />
 ---
 ## ✅ Result
 
@@ -621,7 +615,7 @@ Mark on use Load Balancer
 - **Target group:** Use an existing target group
 - **Target group name:** `website-tg`
 
-<Image of ecs ALB config>
+<img width="1255" height="888" alt="Image" src="https://github.com/user-attachments/assets/75cc4960-b90a-4a0c-ae0a-abf5c32aec8d" />
 
 ### Autoscaling Configuration
 
@@ -633,20 +627,24 @@ Mark on Auto Scaling
 - **target value:** 10
 - **rest leave default**
 
+<img width="1682" height="761" alt="Image" src="https://github.com/user-attachments/assets/58a79c43-e8e1-45fb-9efb-ef403146a9c6" />
+
 scroll Down and Click on create
 
-<Image service Created>
+<img width="1914" height="750" alt="Image" src="https://github.com/user-attachments/assets/4790f896-4bce-4713-bf67-2aa26216ce8e" />
 
 ⏳ It takes a couple of minutes for the ECS cluster to be created.
 
 ---
 After the ECS service is created successfully: Go to EC2 Dashboard Click on Load Balancers Copy the **DNS name (URL)** of the ALB.
 
-<Image of alb creation>
+<img width="1887" height="821" alt="Image" src="https://github.com/user-attachments/assets/94985138-a6d3-46c9-a535-950c5f6b1878" />
 
 Now Copy of that **DNS name (URL)** of the ALB Paste the URL inro Your web browser.
-<final Image>
 
+<img width="1647" height="946" alt="Image" src="https://github.com/user-attachments/assets/fdb43419-830b-470d-bdb0-aa496bc93913" />
+
+🎉 The application load successfully Through ALB DNS URL 🎉.
 ---
 
 ## 🏁 Project Completion
